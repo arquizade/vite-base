@@ -1,0 +1,42 @@
+{
+  "name": "@arquizade/utils",
+  "version": "0.0.0",
+  "description": "Shared TypeScript utilities for the vite-base monorepo.",
+  "homepage": "https://github.com/arquizade/vite-base/tree/main/packages/utils#readme",
+  "bugs": {
+    "url": "https://github.com/arquizade/vite-base/issues"
+  },
+  "license": "MIT",
+  "author": "arquizade",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arquizade/vite-base.git",
+    "directory": "packages/utils"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "dev": "vp pack --watch",
+    "test": "vp test",
+    "check": "vp check"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "vite-plus": "catalog:"
+  }
+}

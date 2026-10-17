@@ -1,0 +1,18 @@
+import { defineConfig } from "vite-plus";
+
+export default defineConfig({
+  pack: {
+    deps: {
+      // tsdown <0.23 compatibility: resolve external dependency subpaths.
+      // Remove to preserve subpath imports as written (the new default).
+      // https://tsdown.dev/options/dependencies#deps-resolvedepsubpath
+      resolveDepSubpath: true,
+    },
+    dts: {
+      generator: "tsgo",
+    },
+    // Exports are maintained in package.json: `exports: true` regenerates them
+    // and drops the `types` and `development` conditions the workspace relies on.
+    exports: false,
+  },
+});
